@@ -53,6 +53,6 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           export KUBECONFIG=kubeconfig
-          kubectl --kubeconfig=kubeconfig apply -f k8s/deployment.yaml
-          kubectl --kubeconfig=kubeconfig apply -f k8s/service.yaml
+          kubectl --kubeconfig=kubeconfig apply -f k8s/deployment.yaml -n netology
+          kubectl --kubeconfig=kubeconfig apply -f k8s/service.yaml -n netology
           kubectl --kubeconfig=kubeconfig rollout status deployment/nginx-test-app -n netology

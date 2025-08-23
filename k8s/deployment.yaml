@@ -18,5 +18,6 @@ spec:
       containers:
       - name: nginx-test-app
         image: thrsnknwldgthtsntpwr/nginx-test-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80

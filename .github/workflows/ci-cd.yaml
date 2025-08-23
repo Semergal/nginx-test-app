@@ -37,13 +37,6 @@ jobs:
     needs: build-and-push
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
-      - name: Debug kubeconfig
-        run: |
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > kubeconfig
-          export KUBECONFIG=kubeconfig
-          kubectl config view
-          kubectl cluster-info
-          kubectl get nodes
       - name: Checkout Code
         uses: actions/checkout@v3
 

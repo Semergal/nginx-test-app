@@ -55,4 +55,4 @@ jobs:
           export KUBECONFIG=kubeconfig
           kubectl --kubeconfig=kubeconfig apply -f k8s/deployment.yaml
           kubectl --kubeconfig=kubeconfig apply -f k8s/service.yaml
-          kubectl --kubeconfig=kubeconfig rollout status deployment/myapp
+          kubectl --kubeconfig=kubeconfig rollout status deployment/nginx-test-app

@@ -21,7 +21,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
@@ -29,8 +29,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.ref_name }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/nginx-test-app:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/nginx-test-app:${{ github.ref_name }}
 
   deploy-to-kubernetes:
     runs-on: ubuntu-latest

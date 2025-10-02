@@ -3,4 +3,4 @@
 nginx с одной статической страницей в Docker-контейнере
 В качестве регистри выбран Dockerhub
 
-https://hub.docker.com/repository/docker/thrsnknwldgthtsntpwr/nginx-test-app/
+https://hub.docker.com/repository/docker/semergal/nginx-test-app/
